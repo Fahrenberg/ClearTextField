@@ -5,8 +5,7 @@ struct ClearTextField: View {
     @State private var s: String = "ClearTextFieldClearTextFieldClearTextFieldClearTextFieldClearTextField"
     @State private var d: Double = 11.5
     var body: some View {
-        UITextField.appearance().clearButtonMode = .whileEditing
-       return  VStack {
+         VStack {
             Group {
                 TextField("String2", text: $s)
                 TextField("String", text: $s)

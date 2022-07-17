@@ -22,7 +22,7 @@ public struct ClearStringButton: ViewModifier {
                 } label: {
                     Image(systemName: "multiply.circle.fill")
                 }
-                .foregroundColor(.secondary)
+                .foregroundColor(Color(uiColor: UIColor.tertiaryLabel))
                 .padding(.trailing, 4)
             }
         }
