@@ -9,23 +9,25 @@ import SwiftUI
 
 public struct ClearStringButton: ViewModifier {
     @Binding public var fieldText: String
-
+    
     public func body(content: Content) -> some View {
-        content
-            .overlay {
-                if !fieldText.isEmpty {
-                    HStack {
-                        Spacer()
-                        Button {
-                            fieldText = ""
-                        } label: {
-                            Image(systemName: "multiply.circle.fill")
-                        }
-                        .foregroundColor(.secondary)
-                        .padding(.trailing, 4)
-                    }
+        ZStack {
+            content
+                .padding(.trailing, fieldText.isEmpty ? 0 : 30)
+            if !fieldText.isEmpty {
+                HStack {
+                    Spacer()
+                Button {
+                    fieldText = ""
+                } label: {
+                    Image(systemName: "multiply.circle.fill")
                 }
+                .foregroundColor(.secondary)
+                .padding(.trailing, 4)
             }
+        }
+        }
+       
     }
 }
 
